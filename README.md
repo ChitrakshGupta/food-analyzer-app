@@ -1,9 +1,11 @@
 # Food AI Analyzer
+<p align="center">
+  <img src="snapshot/01.png" alt="Food AI Analyzer Screenshot 1" width="300"/>
+  <img src="snapshot/02.png" alt="Food AI Analyzer Screenshot 2" width="300"/>
+  <img src="snapshot/03.png" alt="Food AI Analyzer Screenshot 3" width="300"/>
+</p>
 
-![Food AI Analyzer Screenshot Placeholder](snapshot/01.png)
-![Food AI Analyzer Screenshot Placeholder](snapshot/02.png)
-![Food AI Analyzer Screenshot Placeholder](snapshot/03.png)
-*(Replace this placeholder with an actual screenshot of your running application)*
+
 
 ## About the Project
 
