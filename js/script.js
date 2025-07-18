@@ -249,7 +249,7 @@ analyzeButton.addEventListener('click', async () => {
 
         // IMPORTANT: For local hosting, replace "" with your actual Google Cloud API key.
         // In the Canvas environment, this is automatically provided.
-        const apiKey = "AIzaSyAQ2vEP2grCxRH6V_tQCnL8GztYxjuaKwU"; // <--- REPLACE THIS WITH YOUR GOOGLE CLOUD API KEY FOR LOCAL HOSTING
+        const apiKey = ""; // <--- REPLACE THIS WITH YOUR GOOGLE CLOUD API KEY FOR LOCAL HOSTING
         const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
         const response = await fetch(apiUrl, {
