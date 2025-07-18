@@ -1,0 +1,143 @@
+/* Base styles */
+body {
+    font-family: 'Inter', sans-serif;
+    /* Tailwind classes handle background, flex, padding */
+}
+
+/* Main container styling */
+.container {
+    /* Tailwind classes handle background, border-radius, shadow, padding, max-width, width, flex, gap, align-items */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); /* Stronger shadow for depth */
+}
+
+/* Video and Canvas styling */
+video, canvas {
+    /* Tailwind classes handle border, border-radius, max-width, height, background-color */
+    object-fit: contain; /* Ensures content fits without distortion */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06); /* Inner shadow for a subtle effect */
+}
+
+/* Button Group layout */
+.button-group {
+    /* Tailwind classes handle display, gap, flex-wrap, justify-content, grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Responsive grid for buttons */
+}
+
+/* Button base styles */
+button {
+    /* Tailwind classes handle padding, border-radius, font-weight, cursor, transition, box-shadow */
+    border: none; /* Remove default button border */
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover {
+    transform: translateY(-3px); /* Slightly more pronounced lift on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+button:disabled {
+    opacity: 0.5; /* More visible disabled state */
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Primary Button specific styles */
+.btn-primary {
+    background-color: #4f46e5; /* Indigo 600 */
+    color: white;
+    background-image: linear-gradient(to right, #6366f1, #4f46e5); /* Gradient */
+}
+.btn-primary:hover {
+    background-color: #4338ca; /* Indigo 700 */
+    background-image: linear-gradient(to right, #4f46e5, #6366f1); /* Reverse gradient on hover */
+}
+
+/* Secondary Button specific styles */
+.btn-secondary {
+    background-color: #6b7280; /* Gray 500 */
+    color: white;
+    background-image: linear-gradient(to right, #94a3b8, #6b7280); /* Subtle gradient */
+}
+.btn-secondary:hover {
+    background-color: #4b5563; /* Gray 600 */
+    background-image: linear-gradient(to right, #6b7280, #94a3b8); /* Reverse gradient on hover */
+}
+
+/* Result Box styling */
+.result-box {
+    /* Tailwind classes handle background, border, border-radius, padding, width, text-align, min-height, flex, flex-direction, justify-content, align-items, font-size, color */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+}
+
+.result-item {
+    /* Tailwind classes handle display, justify-content, width, padding, border-bottom */
+    border-bottom: 1px solid #bfdbfe; /* Lighter blue dashed border */
+}
+.result-item:last-child {
+    border-bottom: none;
+}
+
+/* Loading Spinner animation */
+.loading-spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #4f46e5; /* Primary color for spinner */
+    border-radius: 50%;
+    width: 32px; /* Slightly larger spinner */
+    height: 32px;
+    animation: spin 1s linear infinite;
+    margin-top: 1.5rem; /* More spacing */
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Message Box styling */
+.message-box {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    padding: 0.8rem 1.8rem; /* Adjusted padding */
+    border-radius: 0.75rem;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3); /* More prominent shadow */
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out; /* Smoother transition */
+    white-space: nowrap;
+    font-weight: 500;
+}
+.message-box.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0); /* Ensure no vertical shift */
+}
+.message-box.bg-red-500 {
+    background-color: #ef4444;
+}
+.message-box.bg-green-500 {
+    background-color: #22c55e; /* Brighter green for success */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 640px) {
+    .container {
+        padding: 1.5rem; /* Slightly less padding on small screens */
+        gap: 1rem; /* Reduced gap between elements */
+    }
+    h1 {
+        font-size: 2.25rem; /* text-3xl on small screens */
+    }
+    .button-group {
+        grid-template-columns: 1fr; /* Stack buttons vertically on very small screens */
+    }
+    .message-box {
+        left: 10px;
+        right: 10px;
+        width: auto;
+        transform: none; /* Remove translateX for full width */
+        text-align: center;
+    }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Calorie Analyzer</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to custom CSS file -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts - Inter for modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-indigo-50 to-blue-100 min-h-screen flex justify-center items-center p-4">
+    <div class="container bg-white rounded-2xl shadow-xl p-6 md:p-8 max-w-xl w-full flex flex-col gap-6 items-center">
+        <h1 class="text-4xl font-extrabold text-gray-800 mb-4 text-center">Food AI Analyzer</h1>
+
+        <!-- Video stream from camera (hidden by default) -->
+        <video id="video" class="hidden w-full rounded-lg border-2 border-indigo-200 shadow-inner" autoplay playsinline></video>
+
+        <!-- Canvas to display captured photo/uploaded image -->
+        <canvas id="canvas" class="w-full h-auto max-w-full rounded-lg border-2 border-indigo-200 shadow-inner bg-gray-100"></canvas>
+
+        <div class="button-group grid grid-cols-2 md:grid-cols-3 gap-4 w-full">
+            <button id="startCameraButton" class="btn-primary">Start Camera</button>
+            <button id="takePictureButton" class="btn-primary" disabled>Take Picture</button>
+            <!-- Hidden file input for image upload -->
+            <input type="file" id="fileInput" accept="image/*">
+            <button id="uploadButton" class="btn-primary">Upload Image</button>
+            <button id="analyzeButton" class="btn-secondary" disabled>Analyze Food</button>
+            <button id="resetButton" class="btn-secondary" disabled>Reset</button>
+        </div>
+
+        <!-- Loading spinner -->
+        <div id="loadingSpinner" class="loading-spinner hidden"></div>
+
+        <!-- Results display area -->
+        <div id="results" class="result-box hidden bg-blue-50 border border-blue-200 rounded-lg p-4 w-full text-center">
+            <p class="text-lg font-semibold text-blue-800 mb-3">Nutritional Information</p>
+            <div class="result-item text-gray-700">
+                <span class="font-medium">Calories:</span> <span id="calories" class="font-bold text-blue-700">--</span>
+            </div>
+            <div class="result-item text-gray-700">
+                <span class="font-medium">Carbohydrates:</span> <span id="carbohydrates" class="font-bold text-blue-700">--</span>
+            </div>
+            <div class="result-item text-gray-700">
+                <span class="font-medium">Proteins:</span> <span id="proteins" class="font-bold text-blue-700">--</span>
+            </div>
+        </div>
+
+        <!-- Custom Message Box -->
+        <div id="messageBox" class="message-box"></div>
+    </div>
+
+    <!-- Link to custom JavaScript file -->
+    <script src="js/script.js"></script>
+</body>
+</html>
